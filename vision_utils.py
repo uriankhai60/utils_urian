@@ -17,7 +17,6 @@ def get_boundingbox(face, width, height):
     size_bb = min(height - y1, size_bb)
     return x1, y1, size_bb
 
-
 def detect_and_crop_face_optimized(image: Image.Image, target_size=(224, 224), resize_for_detection=640):
     if image.mode != 'RGB': image = image.convert('RGB')
     original_np = np.array(image)
@@ -52,11 +51,13 @@ def process_single_file(file_path):
     num_frames_to_extract = 30
 
     try:
+        # 이미지의 경우
         if ext in IMAGE_EXTS:
             image = Image.open(file_path)
             face_img = detect_and_crop_face_optimized(image)
             if face_img:
                 face_images.append(face_img)
+        # 동영상의 경우
         elif ext in VIDEO_EXTS:
             cap = cv2.VideoCapture(str(file_path))
             total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
@@ -76,3 +77,6 @@ def process_single_file(file_path):
         return file_path.name, [], str(e)
 
     return file_path.name, face_images, None
+
+def sampling_from_video(file_path, k=5):
+    ...

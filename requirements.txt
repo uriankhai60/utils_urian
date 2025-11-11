@@ -1,6 +1,6 @@
 --extra-index-url https://download.pytorch.org/whl/cu126
 aifactory
-git+https://github.com/huggingface/transformers.git
+transformers
 diffusers
 datasets
 opencv-python==4.10.0.82
@@ -8,10 +8,9 @@ numpy>=1.26.0,<2.0.0
 scikit-learn
 scipy
 pathlib
-dlib
 torch==2.7.1
 torchvision==0.22.1
-torchaudio
+torchaudio==2.7.1
 ultralytics
 supervision
 huggingface_hub

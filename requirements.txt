@@ -1,16 +1,21 @@
---extra-index-url https://download.pytorch.org/whl/cu126
+## 개인 개발 시
+# --extra-index-url https://download.pytorch.org/whl/cu126  # torch 계열을 따로 설치하지 않는다면 불필요
+# opencv-python==4.10.0.82  # 기본 제공
+# numpy>=1.26.0,<2.0.0      # 기본 제공
+# scikit-learn              # 기본 제공
+# scipy                     # 기본 제공
+# torch==2.7.1              # 기본 제공
+# torchvision==0.22.1       # 기본 제공
+# diffusers                 # 필요 없음
+# torchaudio==2.7.1         # 모델에서 사용하지 않으면 주석 유지
+
+
+
+## 대회 제출 시
 aifactory
 transformers
-diffusers
 datasets
-opencv-python==4.10.0.82
-numpy>=1.26.0,<2.0.0
-scikit-learn
-scipy
 pathlib
-torch==2.7.1
-torchvision==0.22.1
-torchaudio==2.7.1
 ultralytics
 supervision
 huggingface_hub
